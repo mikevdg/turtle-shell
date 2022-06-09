@@ -1,6 +1,7 @@
 cabal-version:      2.4
 name:               turtle-shell
 version:            0.1.0.0
+profiling: True
 
 executable turtle-shell
     main-is:          Main.hs
@@ -9,5 +10,10 @@ executable turtle-shell
         base ^>=4.15.1.0
         , turtle
         , flow
-    hs-source-dirs:   .
+    hs-source-dirs: .
     default-language: Haskell2010
+
+    -- These options enable stack traces on runtime exceptions.
+    ghc-options:
+        -O0
+        -rtsopts "-with-rtsopts=-xc"
