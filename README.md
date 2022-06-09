@@ -1,0 +1,71 @@
+# Turtle-shell template
+
+What you're looking at is a basic template for writing scripts in Haskell using Turtle. 
+
+<https://hackage.haskell.org/package/turtle>
+
+There is a Tutorial available in "Turtle.Tutorial" in that link above.
+
+This template uses Nix to manage packages. In any Linux installation or "Windows for Linux" (WSL) on 
+Windows 10 or 11, follow the instructions here to install Nix:
+
+<https://nixos.org/download.html>
+
+You also want to install Visual Studio Code:
+
+<https://code.visualstudio.com/>
+
+If you're using Windows, then install the "Remote - WSL" extension. 
+
+Use Git to check out this package:
+
+    $ git clone https://github.com/mikevdg/turtle-shell.git
+
+Enter a Nix shell. A Nix shell will install packages in `/nix`, but only make them available inside that shell. This will install Haskell, Cabal and the haskell packages:
+
+    $ cd turtle-shell
+    $ nix-shell
+
+Now you should be able to use Visual Studio with all the IDE features to edit the Haskell code:
+
+    $ code .
+
+# Adding more Haskell packages
+
+Search <https://search.nixos.org/packages> for the package you want. Then:
+
+#. Add that package to the appropriate place in `turtle-shell.cabal`.
+#. Add that package to the appropriate place in `shell.nix`.
+#. Exit, re-enter the nix-shell. 
+
+I know that it's possible to get Nix to be cleverer than this, but I don't want 
+to spend time working out how. Feel free to send me a pull request.
+
+# Working with Nix
+
+A warning: Nix is theoretically amazing and practically awful. Learn about it's goals and design, but
+avoid using it unless you enjoy wasting days on end. Nix isn't there yet. It will serve as an 
+inspiration for some far more usable package manager later.
+
+To search for packages: visit <https://search.nixos.org/packages>.
+
+To install a package globally: 
+
+     $ nix-env -iA nixpkgs.<packageName>
+
+To uninstall a globally installed package:
+
+     $ nix-env -e <packageName>
+
+To see which packages you've installed globally:
+
+    $ nix-env --query
+
+# Why this package exists
+
+Basically, I want an excuse to use Haskell at work. Scripting is a good use case for that - scripts are short-lived and don't get released. You don't need anybody's permission to write a small script to achieve a one-off goal.
+
+There is a trade-off. For Turtle and Haskell, there is a higher learning curve which can take considerable time to learn (if you've learned monads, you're only half-way there!), but in return you get the vast majority of your errors caught while you type in code, plus auto-completion and documentation under your cursor. You get Turtle's rather fantastic Pattern system for searching, parsing and replacing text. However, I still admit that personally I'm not at the stage yet where a Turtle script can be developed faster than a Python script.
+
+You can copy just the `.hs` file, `chmod +x` it and run it on any system that you have Nix installed on, so long as you put all required packages in the script's header. However, you lose all the IDE 
+features of VS Code once the package leaves this directory structure.
