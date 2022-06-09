@@ -45,10 +45,11 @@ If you make changes and need to reload:
 
 # Adding more Haskell packages
 
-Search <https://search.nixos.org/packages> for the package you want. Then:
+Search <https://search.nixos.org/packages> for the package you want. Haskell packages have the "haskellPackages" prefix. Then:
 
 #. Add that package to the appropriate place in `turtle-shell.cabal`.
 #. Add that package to the appropriate place in `shell.nix`.
+#. Add that package as an import in `Main.hs`.
 #. Exit, re-enter the nix-shell. 
 
 I know that it's possible to get Nix to be cleverer than this, but I don't want 
