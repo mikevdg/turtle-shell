@@ -1,0 +1,13 @@
+cabal-version:      2.4
+name:               turtle-shell
+version:            0.1.0.0
+
+executable turtle-shell
+    main-is:          Main.hs
+
+    build-depends:    
+        base ^>=4.15.1.0
+        , turtle
+        , flow
+    hs-source-dirs:   app
+    default-language: Haskell2010
