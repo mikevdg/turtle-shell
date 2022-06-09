@@ -30,6 +30,19 @@ Now you should be able to use Visual Studio with all the IDE features to edit th
 
     $ code .
 
+Sometimes VS Code and it's Haskell extension stop working. Just restart VS Code.
+
+Press CTRL+d to exit from most command lines.
+
+# Running your code
+
+    $ cabal repl
+    ghci> main
+
+If you make changes and need to reload:
+
+    ghci> :r
+
 # Adding more Haskell packages
 
 Search <https://search.nixos.org/packages> for the package you want. Then:
