@@ -43,6 +43,10 @@ If you make changes and need to reload:
 
     ghci> :r
 
+If you get a runtime error in Haskell, the error you get in the repl does not tell you where the error occurred. To get a stack trace (which doesn't even have line numbers...), try compiling and running the program instead:
+
+    $ cabal run
+
 # Adding more Haskell packages
 
 Search <https://search.nixos.org/packages> for the package you want. Haskell packages have the "haskellPackages" prefix. Then:
@@ -57,9 +61,7 @@ to spend time working out how. Feel free to send me a pull request.
 
 # Working with Nix
 
-A warning: Nix is theoretically amazing and practically awful. Learn about it's goals and design, but
-avoid using it unless you enjoy wasting days on end. Nix isn't there yet. It will serve as an 
-inspiration for some far more usable package manager later.
+A warning: Nix is theoretically amazing and practically awful. Learn about it's goals and design, but avoid using it unless you enjoy wasting days on end. Nix isn't there yet. It will serve as an inspiration for some far more usable package manager later.
 
 To search for packages: visit <https://search.nixos.org/packages>.
 
@@ -76,6 +78,8 @@ To see which packages you've installed globally:
     $ nix-env --query
 
 # Why this package exists
+
+Haskell, the language, is mostly okay except for things like "head" on an empty list giving you useless error messages. Haskell, the dev environment, is abysmally bad. This template is a working configuration constructed out of magical incantations discovered through trial and error.
 
 Basically, I want an excuse to use Haskell at work. Scripting is a good use case for that - scripts are short-lived and don't get released. You don't need anybody's permission to write a small script to achieve a one-off goal.
 
