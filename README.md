@@ -91,9 +91,3 @@ There is a trade-off. For Turtle and Haskell, there is a higher learning curve w
 
 You can copy just the `.hs` file, `chmod +x` it and run it on any system that you have Nix installed on, so long as you put all required packages in the script's header. However, you lose all the IDE 
 features of VS Code once the package leaves this directory structure.
-
-# TODO
-
-* Make Haskell print line numbers in stack traces.
-* Make ghci print stack traces.
-* Get Nix to read Haskell packages from the cabal file.
