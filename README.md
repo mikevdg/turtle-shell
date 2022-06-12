@@ -6,8 +6,6 @@ What you're looking at is a basic template for writing scripts in Haskell using 
 
 There is a Tutorial available in "Turtle.Tutorial" in that link above.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/template-nix). Gitpod is an excellent online IDE.
-
 This template uses Nix to manage packages. In any Linux installation or "Windows for Linux" (WSL) on 
 Windows 10 or 11, follow the instructions here to install Nix:
 
